@@ -14,7 +14,7 @@
 
 <h5 class="card-title">Tabel Penaksir</h5>
 
-<!-- ✅ Tombol Tambah -->
+<!--  Tombol Tambah -->
 <a href="{{ route('penaksir.create') }}" class="btn btn-primary mb-3">
     Tambah Data
 </a>

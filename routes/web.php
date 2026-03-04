@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PenaksirController;
+use App\Http\Controllers\NasabahController;
 
 Route::get('/', function () {
     return view('landingpage.pages.index');
@@ -20,6 +21,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // admin (protected)
 Route::prefix('admin')->middleware('admin')->group(function () {
+Route::resource('/nasabah', NasabahController::class);
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])
 ->name('admin.dashboard');

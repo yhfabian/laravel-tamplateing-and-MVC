@@ -63,6 +63,13 @@ href="/admin/penaksir">
 
 </li>
 
+<li class="nav-item">
+    <a class="nav-link collapsed" href="{{ route('nasabah.index') }}">
+        <i class="bi bi-people"></i>
+        <span>Nasabah</span>
+    </a>
+</li>
+
 {{-- Profile --}}
 <li class="nav-item">
 
