@@ -23,18 +23,28 @@ class NasabahController extends Controller
     // STORE
     public function store(Request $request)
     {
-        DB::table('nasabahs')->insert([
-            'nama' => $request->nama,
-            'nik' => $request->nik,
-            'no_hp' => $request->no_hp,
-            'alamat' => $request->alamat,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
 
-        return redirect()->route('nasabah.index');
-    }
+                $request->validate([
+                'nama' => 'required',
+                'nik' => 'required',
+                'no_hp' => 'required',
+                'alamat' => 'required',
+                'jenis_kelamin' => 'required'
+                ]);
+
+                DB::table('nasabahs')->insert([
+                'nama' => $request->nama,
+                'nik' => $request->nik,
+                'no_hp' => $request->no_hp,
+                'alamat' => $request->alamat,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'created_at' => now(),
+                'updated_at' => now()
+                ]);
+
+                return redirect()->route('nasabah.index');
+
+ }
 
     // EDIT
     public function edit($id)
